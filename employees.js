@@ -21,13 +21,13 @@
 
 //CODE HERE
 class Employee {
-    constructor(name, shift){
+    constructor(name, shifts){
         this.name = name
-        this.shift = shift
+        this.shifts = shifts
 
     }
-    getSchedule(Jane, graveyard) {
-        console.log(getSchedule(name,'works on',shift))
+    getSchedule() {
+        console.log(`${this.name} works on ${this.shifts}`)
     }
 }
 
@@ -44,6 +44,7 @@ class Employee {
 */
 
 //CODE HERE
+const empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 /*
     Call the `getSchedule` method on the
@@ -51,6 +52,7 @@ class Employee {
 */
 
 //CODE HERE
+empOne.getSchedule()
 
 
 /*
@@ -66,6 +68,9 @@ class Employee {
 */
 
 //CODE HERE
+const empTwo = {...empOne, name: 'Nick'}
+
+// empTwo.name = 'Nick'
 
 
 
@@ -93,6 +98,18 @@ class Employee {
 */
 
 //CODE HERE
+class Manager extends Employee {
+    constructor(name, shifts, employees){
+        super(name, shifts)
+        this.employees = employees
+    }
+    getEmployees(){
+        console.log(`${this.name} manages ${this.employees}.`)
+    }
+    addEmployee(newEmployee) {
+        this.employees.push(newEmployee)
+    }
+}
 
 
 
@@ -108,6 +125,7 @@ class Employee {
 */
 
 //CODE HERE
+const manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
 
 
 /*
@@ -116,6 +134,7 @@ class Employee {
 */
 
 //CODE HERE
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -124,6 +143,7 @@ class Employee {
 */
 
 //CODE HERE 
+manager.addEmployee('Coach')
 
 /*
     Call the `getEmployees` method on the
@@ -132,3 +152,4 @@ class Employee {
 */
 
 //CODE HERE
+manager.getEmployees()

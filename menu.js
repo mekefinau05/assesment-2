@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+const pizza = {
+    name : 'Cheese',
+    price : 5,
+    category : 'entree',
+    popularity : 10,
+    rating : 10,
+    tags : ['yummy', 'cheesy', 'value', 'family favorite']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,6 +50,7 @@
 */
 
 //CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -53,6 +61,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -63,6 +72,9 @@
 */
 
 //CODE HERE
+const {price} = pizza
+
+console.log(price)
 
 
 /*
@@ -73,6 +85,9 @@
 */
 
 //CODE HERE
+const {category} = pizza
+
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,6 +103,48 @@
 */
 
 //CODE HERE
+const foodArr = [
+    {
+        name : 'Cheese',
+        price : 5,
+        category : 'entree',
+        popularity : 10,
+        rating : 10,
+        tags : ['yummy', 'cheesy', 'value', 'family favorite']
+    },
+    {
+        name : 'barbecue chicken',
+        price : 6,
+        category : 'entree',
+        popularity : 10,
+        rating : 10,
+        tags : ['yummy', 'flavor', 'value', 'family favorite']
+    },
+    {
+        name : 'alfredo chicken',
+        price : 6,
+        category : 'entree',
+        popularity : 10,
+        rating : 10,
+        tags : ['yummy', 'meat', 'value', 'family favorite']
+    },
+    {
+        name : 'hawaiian',
+        price : 4,
+        category : 'entree',
+        popularity : 10,
+        rating : 10,
+        tags : ['yummy', 'pineapple', 'value', 'family favorite']
+    },
+    {
+        name : 'pepperoni',
+        price : 5,
+        category : 'entree',
+        popularity : 10,
+        rating : 10,
+        tags : ['yummy', 'original', 'value', 'family favorite']
+        },
+]
 
 
 
@@ -105,7 +162,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(meal => meal.tags.includes('pineapple'))
+
+// console.log(filteredFood)
 
 
 
@@ -149,6 +208,17 @@
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    const filteredArray = foodArr.filter(meal => {
+        if(type === 'above') {
+            return meal[property] > number
+        }else if(type === 'below') {
+            return meal[property] < number
+        }
+    })
+    return filteredFood
+}
+
 
 
 /*
@@ -159,3 +229,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 5, 'below'))
